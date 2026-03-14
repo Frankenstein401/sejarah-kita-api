@@ -120,6 +120,7 @@ Route::middleware(['auth:api', 'admin'])->prefix('admin')->group(function () {
     Route::delete('discussions/{id}',        [AdminDiscussionController::class, 'destroy']);
 
     // Timeline
+    Route::get('timeline',         [AdminTimelineController::class, 'index']);
     Route::post('timeline',        [AdminTimelineController::class, 'store']);
     Route::put('timeline/{id}',    [AdminTimelineController::class, 'update']);
     Route::delete('timeline/{id}', [AdminTimelineController::class, 'destroy']);

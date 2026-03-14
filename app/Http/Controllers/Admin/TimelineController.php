@@ -13,6 +13,13 @@ class TimelineController extends Controller
         protected TimelineService $timelineService
     ) {}
 
+    public function index(): JsonResponse
+    {
+        $events = $this->timelineService->getAll();
+
+        return response()->json(['data' => $events]);
+    }
+
     public function store(Request $request): JsonResponse
     {
         $request->validate([
